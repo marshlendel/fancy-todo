@@ -82,3 +82,7 @@ form button:hover {
 .check-button {
   background: lightseagreen;
 }
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
