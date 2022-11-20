@@ -41,11 +41,15 @@ function addTodo(e) {
 
 function deleteAndCheck(e) {
   const todoItem = e.target;
+  const todo = todoItem.parentElement;
   if (todoItem.classList[0] === "trash-button") {
-    todoItem.parentElement.remove();
+    todo.classList.add("fall");
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
   }
 
   if (todoItem.classList[0] === "check-button") {
-    todoItem.classList.toggle("completed")
+    todo.classList.toggle("completed");
   }
 }
