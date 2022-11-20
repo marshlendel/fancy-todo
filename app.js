@@ -2,6 +2,7 @@
 const todo = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+const todoInput = document.querySelector(".todo-input");
 //Event Listeners
 todoButton.addEventListener("click", addTodo);
 
@@ -15,21 +16,22 @@ function addTodo(e) {
 
   // CREATE LI
   const newTodo = document.createElement("li");
-  newTodo.innerText = "hey";
+  newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
 
   //CHECK MARK BUTTON
-  const checkButton = document.createElement("button")
+  const checkButton = document.createElement("button");
   checkButton.innerHTML = "<i class='fas fa-check'></i>";
-  checkButton.classList.add("check-button")
-  todoDiv.appendChild(checkButton)
+  checkButton.classList.add("check-button");
+  todoDiv.appendChild(checkButton);
   //TRASH BUTTON
-  const trashButton = document.createElement("button")
+  const trashButton = document.createElement("button");
   trashButton.innerHTML = "<i class='fas fa-trash'></i>";
-  trashButton.classList.add("trash-button")
-  todoDiv.appendChild(trashButton)
+  trashButton.classList.add("trash-button");
+  todoDiv.appendChild(trashButton);
 
   //APPEND INDIVIDUAL TODO DIV TO TODO LIST
-  todoList.appendChild(todoDiv)
+  todoList.appendChild(todoDiv);
+  todoInput.value = "";
 }
