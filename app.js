@@ -47,21 +47,19 @@ function addTodo(item, id) {
 
 function addFromInput(e) {
   e.preventDefault();
-  const todoInput = document.querySelector(".todo-input");
+  let input = document.querySelector(".todo-input");
   let currentId = Number(localStorage.getItem("id"));
 
   if (!localStorage.getItem("id")) {
     localStorage.setItem("id", 1);
   }
 
-  if (todoInput.value !== "") {
-    addTodo(todoInput.value, currentId);
-
-    //Update information
-    addToStorage(todoInput.value, currentId);
+  if (input.value.trim()) {
+    addTodo(input.value, currentId);
+    addToStorage(input.value, currentId);
     currentId++;
     localStorage.setItem("id", currentId);
-    todoInput.value = "";
+    input.value = "";
   }
 }
 
