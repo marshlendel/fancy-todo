@@ -56,13 +56,13 @@ function addFromInput(e) {
 
   if (todoInput.value !== "") {
     addTodo(todoInput.value, currentId);
-  }
 
-  //Update information
-  addToStorage(todoInput.value, currentId);
-  currentId++;
-  localStorage.setItem("id", currentId);
-  todoInput.value = "";
+    //Update information
+    addToStorage(todoInput.value, currentId);
+    currentId++;
+    localStorage.setItem("id", currentId);
+    todoInput.value = "";
+  }
 }
 
 function displayTodos(storageList) {
@@ -110,7 +110,7 @@ function addToStorage(todo, id) {
   if (localStorage.getItem("todo-list")) {
     items = JSON.parse(localStorage.getItem("todo-list"));
   } else {
-    items = []
+    items = [];
   }
   items.push({ name: todo, isComplete: false, id: id });
   localStorage.setItem("todo-list", JSON.stringify(items));
