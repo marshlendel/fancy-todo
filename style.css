@@ -167,4 +167,8 @@ select {
   .todo-container {
     margin-top: 3rem;
   }
+
+  .todo-list {
+    width: 80%;
+  }
 }
