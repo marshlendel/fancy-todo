@@ -106,11 +106,11 @@ function deleteAndCheck(e) {
 }
 
 function addToStorage(todo, id) {
-  let items = [];
+  let items;
   if (localStorage.getItem("todo-list")) {
     items = JSON.parse(localStorage.getItem("todo-list"));
   } else {
-    localStorage.setItem("todo-list", []);
+    items = []
   }
   items.push({ name: todo, isComplete: false, id: id });
   localStorage.setItem("todo-list", JSON.stringify(items));
