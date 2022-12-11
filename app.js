@@ -55,8 +55,8 @@ function addFromInput(e) {
   }
 
   if (input.value.trim()) {
-    addTodo(input.value, currentId);
-    addToStorage(input.value, currentId);
+    addTodo(input.value.trim(), currentId);
+    addToStorage(input.value.trim(), currentId);
     currentId++;
     localStorage.setItem("id", currentId);
     input.value = "";
