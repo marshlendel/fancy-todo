@@ -1,5 +1,5 @@
 //Selectors
-(function app() {
+(function() {
   const todoButton = document.querySelector(".todo-button");
   const todoList = document.querySelector(".todo-list");
   const select = document.querySelector("select");
